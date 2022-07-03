@@ -1,11 +1,11 @@
 <template>
   <ul class="todo-list">
     <!-- completed: 完成的类名 -->
-    <li class="{completed:obj.isDone}" v-for="obj in arr" :key="obj.id">
+    <li :class="{completed:item.isDone}" v-for="item in list" :key="item.id" >
       <div class="view" >
-        <input class="toggle" type="checkbox" v-model="obj.isDone"/>
-        <label>{{obj.name}}</label>
-        <button class="destroy" @click="delFn(obj.id)"></button>
+        <input class="toggle" type="checkbox" v-model="item.isDone"/>
+        <label>{{item.name}}</label>
+        <button class="destroy" @click="del(item.id)"></button>
       </div>
     </li>
   </ul>
@@ -14,10 +14,10 @@
  
 <script>
 export default {
-    props:['arr'],
+    props:['list'],
     methods: {
-        delFn(id){
-            this.$emit('del',id)
+        del(id){
+          this.$emit('del',id);
         }
     },
 }

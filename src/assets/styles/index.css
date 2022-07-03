@@ -126,7 +126,7 @@ body {
 	height: 34px;
 	font-size: 0;
 	position: absolute;
-	top: 51px;
+	top: 12px;
 	left: -13px;
 	-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);
@@ -174,9 +174,6 @@ body {
 
 .todo-list li.editing .view {
 	display: none;
-}
-.header {
-	position: relative;
 }
 
 .todo-list li .toggle {
